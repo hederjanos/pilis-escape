@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pilis Escape Tours</title>
+    <link rel="icon" href="../media/icons/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="../css/print.css" media="print" />
+    <link rel="stylesheet" href="../css/general.css" />
+    <link rel="stylesheet" href="../css/tours.css" />
+    <script src="../js/general.js" defer></script>
+    <script src="../js/tours.js" defer></script>
+    <script>
+      try {
+        if (localStorage.getItem("accessibleMode") === "true") {
+          document.documentElement.classList.add("accessible");
+        }
+      } catch (e) {}
+    </script>
+  </head>
+  <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <div class="page">
+      <header class="header">
+        <figure class="logo">
+          <a href="home.html">
+            <img src="../media/icons/logo.png" alt="Pilis Escape Logo" />
+          </a>
+        </figure>
+        <div class="site-title">Tours</div>
+        <nav class="nav">
+          <div class="nav-left">
+            <button
+              class="hamburger"
+              onclick="toggleMenu()"
+              aria-label="Toggle menu"
+              aria-expanded="false"
+              aria-controls="navMenu"
+            >
+              ☰
+            </button>
+          </div>
+          <ul class="nav-menu" id="navMenu">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="tours.html">Tours</a></li>
+            <li><a href="registration.html">Register</a></li>
+          </ul>
+          <div class="nav-right">
+            <button
+              class="accessibility-toggle"
+              onclick="toggleAccessibility()"
+              aria-label="Toggle accessible mode"
+            >
+              <img
+                src="../media/icons/accessible.png"
+                alt="Accessibility Icon"
+              />
+            </button>
+          </div>
+        </nav>
+      </header>
+      <main class="container">
+        <div class="scroll-wrapper">
+          <section class="banner">
+            <div class="banner-overlay">
+              <h1 class="heading text-center">
+                Find the Perfect Tour for Your Next Adventure!
+              </h1>
+            </div>
+          </section>
+          <div class="main-content">
+            <div class="filters">
+              <p>Search our tours:</p>
+              <div class="column">
+                <input
+                  type="text"
+                  placeholder="Search by tour name..."
+                  id="search-input"
+                  onkeyup="filterTours()"
+                  class="input-base"
+                />
+              </div>
+              <div class="row">
+                <div class="column">
+                  <select
+                    class="input-base"
+                    id="location-select"
+                    onchange="filterTours()"
+                  >
+                    <option value="" selected>All Locations</option>
+                    <option value="Prédikálószék" lang="hu">
+                      Prédikálószék
+                    </option>
+                    <option value="Dobogókő" lang="hu">Dobogókő</option>
+                    <option value="Pilis">Pilis</option>
+                    <option value="Pilisszentkereszt" lang="hu">
+                      Pilisszentkereszt
+                    </option>
+                    <option value="Vadálló-kövek" lang="hu">
+                      Vadálló-kövek
+                    </option>
+                    <option value="Rám-szakadék" lang="hu">Rám-szakadék</option>
+                  </select>
+                  <select
+                    class="input-base"
+                    id="difficulty-select"
+                    onchange="filterTours()"
+                  >
+                    <option value="" selected>All Difficulties</option>
+                    <option value="Easy">Easy</option>
+                    <option value="Moderate">Moderate</option>
+                    <option value="Challenging">Challenging</option>
+                  </select>
+                </div>
+                <div class="column">
+                  <input
+                    class="input-base"
+                    type="number"
+                    placeholder="Min Length (km)"
+                    id="min-length-input"
+                    onkeyup="filterTours()"
+                  />
+                  <input
+                    class="input-base"
+                    type="number"
+                    placeholder="Max Length (km)"
+                    id="max-length-input"
+                    onkeyup="filterTours()"
+                  />
+                </div>
+                <div class="column">
+                  <input
+                    class="input-base"
+                    type="number"
+                    placeholder="Min Elevation Gain (m)"
+                    id="min-gain-input"
+                    onkeyup="filterTours()"
+                  />
+                  <input
+                    class="input-base"
+                    type="number"
+                    placeholder="Max Elevation Gain (m)"
+                    id="max-gain-input"
+                    onkeyup="filterTours()"
+                  />
+                </div>
+              </div>
+            </div>
+            <table id="tours-table">
+              <thead>
+                <tr>
+                  <th>Tour Name</th>
+                  <th>Location</th>
+                  <th>Difficulty</th>
+                  <th>Length (km)</th>
+                  <th>Elevation Gain (m)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr id="tour1">
+                  <td>Sunset Hike</td>
+                  <td><span lang="hu">Prédikálószék</span></td>
+                  <td>Moderate</td>
+                  <td>9.9</td>
+                  <td>400</td>
+                </tr>
+                <tr id="tour2">
+                  <td>Adventure Hike</td>
+                  <td><span lang="hu">Dobogókő</span></td>
+                  <td>Challenging</td>
+                  <td>16.1</td>
+                  <td>560</td>
+                </tr>
+                <tr id="tour3">
+                  <td>Forest &amp; Cave Exploration</td>
+                  <td><span lang="hu">Pilis</span></td>
+                  <td>Challenging</td>
+                  <td>16.2</td>
+                  <td>550</td>
+                </tr>
+                <tr id="tour4">
+                  <td>Waterfall Walk</td>
+                  <td><span lang="hu">Pilisszentkereszt</span></td>
+                  <td>Easy</td>
+                  <td>1.8</td>
+                  <td>70</td>
+                </tr>
+                <tr id="tour5">
+                  <td>Rock &amp; Reach</td>
+                  <td><span lang="hu">Vadálló-kövek</span></td>
+                  <td>Challenging</td>
+                  <td>11.4</td>
+                  <td>550</td>
+                </tr>
+                <tr id="tour6">
+                  <td>Rock &amp; Wate</td>
+                  <td><span lang="hu">Rám-szakadék</span></td>
+                  <td>Moderate</td>
+                  <td>9.5</td>
+                  <td>400</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </main>
+      <footer class="footer">
+        <div class="copyright">
+          &copy; 2025 <strong>Pilis Escape</strong>. All rights reserved.
+        </div>
+        <div class="social-icons">
+          <a href="https://facebook.com" target="_blank">
+            <img src="../media/icons/facebook.svg" alt="Facebook" />
+          </a>
+          <a href="https://instagram.com" target="_blank">
+            <img src="../media/icons/instagram.svg" alt="Instagram" />
+          </a>
+          <a href="https://linkedin.com" target="_blank">
+            <img src="../media/icons/linkedin.svg" alt="LinkedIn" />
+          </a>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

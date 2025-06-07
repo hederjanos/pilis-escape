@@ -1,0 +1,49 @@
+* {
+  background: none !important;
+  box-shadow: none !important;
+  overflow: visible !important;
+  margin: 0;
+  padding: 0;
+}
+
+header,
+footer,
+.hero-video,
+.skip-link {
+  display: none !important;
+}
+
+.scroll-wrapper {
+  overflow: visible !important;
+  height: auto !important;
+  max-height: none !important;
+}
+
+.banner {
+  padding: 2rem !important;
+  margin-bottom: 2rem !important;
+  background: none !important;
+  min-height: 100px !important;
+  height: auto !important;
+  overflow: visible !important;
+  display: block !important;
+}
+
+.banner-overlay {
+  position: static !important;
+  background: none !important;
+  padding: 1rem 0 !important;
+  text-align: center !important;
+}
+
+body {
+  background: #fff !important;
+  color: #000 !important;
+  font-size: 12pt !important;
+  line-height: 1.5 !important;
+}
+
+img {
+  max-width: 40% !important;
+  height: auto !important;
+}

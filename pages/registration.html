@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pilis Escape Registration</title>
+    <link rel="icon" href="..media/icons/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="../css/print.css" media="print" />
+    <link rel="stylesheet" href="../css/general.css" />
+    <link rel="stylesheet" href="../css/registration.css" />
+    <script src="../js/general.js" defer></script>
+    <script>
+      try {
+        if (localStorage.getItem("accessibleMode") === "true") {
+          document.documentElement.classList.add("accessible");
+        }
+      } catch (e) {}
+    </script>
+  </head>
+  <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <div class="page">
+      <header class="header">
+        <figure class="logo">
+          <a href="home.html">
+            <img src="../media/icons/logo.png" alt="Pilis Escape Logo" />
+          </a>
+        </figure>
+        <nav class="nav">
+          <div class="nav-left">
+            <button
+              class="hamburger"
+              onclick="toggleMenu()"
+              aria-label="Toggle menu"
+              aria-expanded="false"
+              aria-controls="navMenu"
+            >
+              ☰
+            </button>
+          </div>
+          <ul class="nav-menu" id="navMenu">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="tours.html">Tours</a></li>
+            <li><a href="registration.html">Register</a></li>
+          </ul>
+          <div class="nav-right">
+            <button
+              class="accessibility-toggle"
+              onclick="toggleAccessibility()"
+              aria-label="Toggle accessible mode"
+            >
+              <img
+                src="../media/icons/accessible.png"
+                alt="Accessibility Icon"
+              />
+            </button>
+          </div>
+        </nav>
+      </header>
+      <main class="container">
+        <div class="main-content">
+          <form action="/register" method="post">
+            <fieldset>
+              <h1 class="heading text-center">Registration</h1>
+              <div class="form-row inline">
+                <div>
+                  <label for="name">Name</label>
+                  <input
+                    type="text"
+                    id="name"
+                    class="input-base"
+                    name="name"
+                    placeholder="Type your name..."
+                    maxlength="50"
+                    required
+                  />
+                </div>
+                <div>
+                  <label for="email">Email</label>
+                  <input
+                    type="email"
+                    id="email"
+                    class="input-base"
+                    name="email"
+                    placeholder="Type your email..."
+                    maxlength="100"
+                    required
+                  />
+                </div>
+              </div>
+              <div class="form-row center">
+                <div>
+                  <label for="event">Event</label>
+                  <select id="event" class="input-base" name="event" required>
+                    <option value="" selected>All Events</option>
+                    <option value="sunset hike">Sunset Hike</option>
+                    <option value="adventure hike">Adventure Hike</option>
+                    <option value="forest cave exploration">
+                      Forest &amp; Cave Exploration
+                    </option>
+                    <option value="waterfall walk">Waterfall Walk</option>
+                    <option value="rock reach">Rock &amp; Reach</option>
+                    <option value="rock water">Rock &amp; Water</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-row inline">
+                <fieldset class="checkbox-group">
+                  <legend>Favourite activities</legend>
+                  <label
+                    ><input
+                      type="checkbox"
+                      name="activities"
+                      value="icebreaker"
+                      checked
+                    />
+                    Icebreaker games</label
+                  >
+                  <label
+                    ><input
+                      type="checkbox"
+                      name="activities"
+                      value="storytelling"
+                    />
+                    Group storytelling</label
+                  >
+                  <label
+                    ><input
+                      type="checkbox"
+                      name="activities"
+                      value="navigation"
+                    />
+                    Team-based navigation</label
+                  >
+                </fieldset>
+                <fieldset class="radio-group">
+                  <legend>My main goal for this hike</legend>
+                  <label
+                    ><input type="radio" name="goal" value="nature" required />
+                    Enjoy nature</label
+                  >
+                  <label
+                    ><input type="radio" name="goal" value="meet" /> Meet new
+                    people</label
+                  >
+                  <label
+                    ><input type="radio" name="goal" value="photos" /> Take
+                    great photos</label
+                  >
+                </fieldset>
+              </div>
+              <div class="form-row">
+                <div>
+                  <label for="message">Message</label>
+                  <textarea
+                    id="message"
+                    class="input-base"
+                    name="message"
+                    placeholder="Type your Message..."
+                    rows="6"
+                    maxlength="1000"
+                  ></textarea>
+                </div>
+              </div>
+              <div class="button-group">
+                <button class="btn" type="reset">Reset</button>
+                <button class="btn" type="submit">Submit</button>
+              </div>
+            </fieldset>
+          </form>
+        </div>
+      </main>
+      <footer class="footer">
+        <div class="copyright">
+          &copy; 2025 <strong>Pilis Escape</strong>. All rights reserved.
+        </div>
+        <div class="social-icons">
+          <a href="https://facebook.com" target="_blank">
+            <img src="../media/icons/facebook.svg" alt="Facebook" />
+          </a>
+          <a href="https://instagram.com" target="_blank">
+            <img src="../media/icons/instagram.svg" alt="Instagram" />
+          </a>
+          <a href="https://linkedin.com" target="_blank">
+            <img src="../media/icons/linkedin.svg" alt="LinkedIn" />
+          </a>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

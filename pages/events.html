@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pilis Escape Events</title>
+    <link rel="icon" href="../media/icons/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="../css/print.css" media="print" />
+    <link rel="stylesheet" href="../css/general.css" />
+    <link rel="stylesheet" href="../css/events.css" />
+    <script src="../js/general.js" defer></script>
+    <script src="../js/events.js" defer></script>
+    <script>
+      try {
+        if (localStorage.getItem("accessibleMode") === "true") {
+          document.documentElement.classList.add("accessible");
+        }
+      } catch (e) {}
+    </script>
+  </head>
+  <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <div class="page">
+      <header class="header">
+        <figure class="logo">
+          <a href="home.html">
+            <img src="../media/icons/logo.png" alt="Pilis Escape Logo" />
+          </a>
+        </figure>
+        <div class="site-title">Events</div>
+        <nav class="nav">
+          <div class="nav-left">
+            <button
+              class="hamburger"
+              onclick="toggleMenu()"
+              aria-label="Toggle menu"
+              aria-expanded="false"
+              aria-controls="navMenu"
+            >
+              ☰
+            </button>
+          </div>
+          <ul class="nav-menu" id="navMenu">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="tours.html">Tours</a></li>
+            <li><a href="registration.html">Register</a></li>
+          </ul>
+          <div class="nav-right">
+            <button
+              class="accessibility-toggle"
+              onclick="toggleAccessibility()"
+              aria-label="Toggle accessible mode"
+            >
+              <img
+                src="../media/icons/accessible.png"
+                alt="Accessibility Icon"
+              />
+            </button>
+          </div>
+        </nav>
+      </header>
+      <main class="container">
+        <div class="scroll-wrapper">
+          <section class="banner">
+            <div class="banner-overlay">
+              <h1 class="heading text-center">
+                Step Into Adventure
+                <span class="line-break">&ndash;</span>
+                Community Events Await
+              </h1>
+            </div>
+          </section>
+          <div class="main-content">
+            <div class="filters">
+              <p>Search our events:</p>
+              <input
+                type="text"
+                placeholder="Search by event name..."
+                id="search-input"
+                class="input-base"
+                onkeyup="filterEvents()"
+              />
+              <select
+                name="Category"
+                id="category-select"
+                class="input-base"
+                onchange="filterEvents()"
+              >
+                <option value="" selected>All Categories</option>
+                <option>Scenic</option>
+                <option>Adventure</option>
+                <option>Exploration</option>
+              </select>
+            </div>
+            <section>
+              <h2 class="heading-2">Events</h2>
+              <div class="event-grid">
+                <article class="event-card">
+                  <figure class="event-image">
+                    <img
+                      src="../media/images/predikaloszek.jpg"
+                      alt="Sunset Hike"
+                    />
+                  </figure>
+                  <div class="event-content">
+                    <div class="event-info">
+                      <p class="event-date">April 31, 2025</p>
+                      <div class="event-categories">
+                        <span>Scenic</span>
+                      </div>
+                    </div>
+                    <h3 class="heading-3">Sunset Hike</h3>
+                    <p class="event-description">
+                      Experience the stunning sunset from one of the best
+                      viewpoints in the Pilis Mountains. This moderate hike will
+                      take you through lush forests, leading to an unforgettable
+                      panoramic view. Perfect for photographers and nature
+                      lovers!
+                    </p>
+                    <div class="tour-button">
+                      <a href="tours.html#tour1" class="btn btn-small">Tour</a>
+                    </div>
+                  </div>
+                </article>
+                <article class="event-card">
+                  <figure class="event-image">
+                    <img
+                      src="../media/images/dobogoko.jpg"
+                      alt="Adventure Hike"
+                    />
+                  </figure>
+                  <div class="event-content">
+                    <div class="event-info">
+                      <p class="event-date">February 30, 2025</p>
+                      <div class="event-categories">
+                        <span>Scenic</span>
+                        <span>Adventure</span>
+                      </div>
+                    </div>
+                    <h3 class="heading-3">Adventure Hike</h3>
+                    <p class="event-description">
+                      Explore the iconic <span lang="hu">Dobogókő</span>, one of
+                      the most famous peaks in Hungary! This full-day hike will
+                      take you through breathtaking landscapes, including
+                      forests, cliffs, and hidden trails.
+                    </p>
+                    <div class="tour-button">
+                      <a href="tours.html#tour2" class="btn btn-small">Tour</a>
+                    </div>
+                  </div>
+                </article>
+                <article class="event-card">
+                  <figure class="event-image">
+                    <img
+                      src="../media/images/pilis.jpg"
+                      alt="Forest &amp; Cave Exploration"
+                    />
+                  </figure>
+                  <div class="event-content">
+                    <div class="event-info">
+                      <p class="event-date">June 31, 2025</p>
+                      <div class="event-categories">
+                        <span>Adventure</span>
+                        <span>Exploration</span>
+                      </div>
+                    </div>
+                    <h3 class="heading-3">Forest &amp; Cave Exploration</h3>
+                    <p class="event-description">
+                      Discover the hidden caves of <span lang="hu">Pilis</span>!
+                      This hike combines a beautiful forest walk with guided
+                      exploration of natural rock formations and caves. Bring a
+                      flashlight and prepare for adventure!
+                    </p>
+                    <div class="tour-button">
+                      <a href="tours.html#tour3" class="btn btn-small">Tour</a>
+                    </div>
+                  </div>
+                </article>
+                <article class="event-card">
+                  <figure class="event-image">
+                    <img
+                      src="../media/images/pilisszentkereszt.jpg"
+                      alt="Waterfall Walk"
+                    />
+                  </figure>
+                  <div class="event-content">
+                    <div class="event-info">
+                      <p class="event-date">November 31, 2025</p>
+                      <div class="event-categories">
+                        <span>Exploration</span>
+                      </div>
+                    </div>
+                    <h3 class="heading-3">Waterfall Walk</h3>
+                    <p class="event-description">
+                      An easy and relaxing hike to the picturesque waterfalls
+                      near
+                      <span lang="hu">Pilisszentkereszt</span>. A great option
+                      for beginners and those who enjoy peaceful nature walks.
+                    </p>
+                    <div class="tour-button">
+                      <a href="tours.html#tour4" class="btn btn-small">Tour</a>
+                    </div>
+                  </div>
+                </article>
+                <article class="event-card">
+                  <figure class="event-image">
+                    <img
+                      src="../media/images/vadallo.jpg"
+                      alt="Rock &amp; Reach"
+                    />
+                  </figure>
+                  <div class="event-content">
+                    <div class="event-info">
+                      <p class="event-date">September 31, 2025</p>
+                      <div class="event-categories">
+                        <span>Scenic</span>
+                        <span>Adventure</span>
+                      </div>
+                    </div>
+                    <h3 class="heading-3">Rock &amp; Reach</h3>
+                    <p class="event-description">
+                      Explore the fascinating
+                      <span lang="hu">Vadálló</span> Stones on this
+                      unforgettable hike in the Danube Bend! This full-day
+                      adventure will take you through the unique, bizarre rock
+                      formations of the Vadálló Stones, where towering spifFres
+                      create an otherworldly landscape.
+                    </p>
+                    <div class="tour-button">
+                      <a href="tours.html#tour5" class="btn btn-small">Tour</a>
+                    </div>
+                  </div>
+                </article>
+                <article class="event-card">
+                  <figure class="event-image">
+                    <img src="../media/images/ram.jpg" alt="Rock &amp; Water" />
+                  </figure>
+                  <div class="event-content">
+                    <div class="event-info">
+                      <p class="event-date">February 31, 2025</p>
+                      <div class="event-categories">
+                        <span>Scenic</span>
+                        <span>Adventure</span>
+                      </div>
+                    </div>
+                    <h3 class="heading-3">Rock &amp; Water</h3>
+                    <p class="event-description">
+                      Experience the thrill of hiking through the stunning
+                      <span lang="hu">Rám-szakadék</span> Gorge! Navigate rocky
+                      cliffs, waterfalls, and secured paths as you journey
+                      through beautiful landscapes, ending with a visit to
+                      historic ruins.
+                    </p>
+                    <div class="tour-button">
+                      <a href="tours.html#tour6" class="btn btn-small">Tour</a>
+                    </div>
+                  </div>
+                </article>
+              </div>
+            </section>
+          </div>
+        </div>
+      </main>
+      <footer class="footer">
+        <div class="copyright">
+          &copy; 2025 <strong>Pilis Escape</strong>. All rights reserved.
+        </div>
+        <div class="social-icons">
+          <a href="https://facebook.com" target="_blank">
+            <img src="../media/icons/facebook.svg" alt="Facebook" />
+          </a>
+          <a href="https://instagram.com" target="_blank">
+            <img src="../media/icons/instagram.svg" alt="Instagram" />
+          </a>
+          <a href="https://linkedin.com" target="_blank">
+            <img src="../media/icons/linkedin.svg" alt="LinkedIn" />
+          </a>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

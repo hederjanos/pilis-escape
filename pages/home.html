@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pilis Escape Home</title>
+    <link rel="icon" href="..media/icons/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="../css/print.css" media="print" />
+    <link rel="stylesheet" href="../css/general.css" />
+    <link rel="stylesheet" href="../css/home.css" />
+    <script src="../js/general.js" defer></script>
+    <script>
+      try {
+        if (localStorage.getItem("accessibleMode") === "true") {
+          document.documentElement.classList.add("accessible");
+        }
+      } catch (e) {}
+    </script>
+  </head>
+  <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <div class="page">
+      <header class="header">
+        <figure class="logo">
+          <a href="home.html">
+            <img src="../media/icons/logo.png" alt="Pilis Escape Logo" />
+          </a>
+        </figure>
+        <div class="site-title">Pilis Escape</div>
+        <nav class="nav">
+          <div class="nav-left">
+            <button
+              class="hamburger"
+              onclick="toggleMenu()"
+              aria-label="Toggle menu"
+              aria-expanded="false"
+              aria-controls="navMenu"
+            >
+              ☰
+            </button>
+          </div>
+          <ul class="nav-menu" id="navMenu">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="tours.html">Tours</a></li>
+            <li><a href="registration.html">Register</a></li>
+          </ul>
+          <div class="nav-right">
+            <button
+              class="accessibility-toggle"
+              onclick="toggleAccessibility()"
+              aria-label="Toggle accessible mode"
+            >
+              <img
+                src="../media/icons/accessible.png"
+                alt="Accessibility Icon"
+              />
+            </button>
+          </div>
+        </nav>
+      </header>
+      <main class="container" id="main-content">
+        <div class="main-content">
+          <section class="hero">
+            <div class="hero-text">
+              <h1 class="heading">
+                Discover the beauty of Pilis and make friends
+              </h1>
+              <p>
+                Pilis Escape is more than just a hiking organizer—it's a
+                community for those looking to explore the natural beauty of the
+                <a
+                  href="https://www.dunaipoly.hu/hu/helyek/vedett-teruletek/duna-ipoly-nemzeti-park/duna-ipoly-nemzeti-park#"
+                  class="link"
+                  target="_blank"
+                >
+                  Duna&ndash;Ipoly National Park
+                </a>
+                and the Pilis region while connecting with like-minded people.
+                Whether you're staying in Hungary for a few months or settling
+                in for the long term, our guided hikes offer a chance to
+                discover breathtaking trails, share memorable experiences, and
+                build friendships along the way.
+              </p>
+
+              <p>Join us and make your time in Hungary even more meaningful!</p>
+              <div class="hero-buttons">
+                <a href="events.html" class="btn">Events</a>
+                <a href="tours.html" class="btn">Tours</a>
+              </div>
+            </div>
+            <div class="hero-video">
+              <video controls poster="../media/images/predikaloszek.jpg">
+                <source src="../media/video/duna_kanyar.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+              <details class="hero-text">
+                <summary>Video description</summary>
+                <p>
+                  The video centers around the Prédikálószék lookout tower. It
+                  begins with close-up shots of the structure, followed by a
+                  smooth 360-degree panoramic view from the top. Gradually, the
+                  iconic curve of the Danube Bend emerges and becomes the new
+                  focal point. The landscape transitions from the man-made
+                  lookout to the vast natural beauty of the river and its
+                  surrounding hills. There is no narration, but the visuals
+                  clearly convey the impressive scale and serenity of the
+                  location.
+                </p>
+              </details>
+            </div>
+          </section>
+        </div>
+      </main>
+      <footer class="footer">
+        <div class="copyright">
+          &copy; 2025 <strong>Pilis Escape</strong>. All rights reserved.
+        </div>
+        <div class="social-icons">
+          <a href="https://facebook.com" target="_blank">
+            <img src="../media/icons/facebook.svg" alt="Facebook" />
+          </a>
+          <a href="https://instagram.com" target="_blank">
+            <img src="../media/icons/instagram.svg" alt="Instagram" />
+          </a>
+          <a href="https://linkedin.com" target="_blank">
+            <img src="../media/icons/linkedin.svg" alt="LinkedIn" />
+          </a>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
