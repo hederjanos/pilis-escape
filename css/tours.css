@@ -43,10 +43,15 @@
   width: 100%;
 }
 
+.table-container {
+  overflow-x: auto;
+  max-width: 100%;
+  box-shadow: 0 0.4rem 1.2rem var(--neutral);
+}
+
 table {
   border-collapse: collapse;
   color: var(--text-primary);
-  box-shadow: 0 0.4rem 1.2rem var(--neutral);
 }
 
 th,
